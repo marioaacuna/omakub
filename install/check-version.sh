@@ -8,11 +8,19 @@ fi
 
 . /etc/os-release
 
-# Check if running on Ubuntu 24.04 or higher
-if [ "$ID" != "ubuntu" ] || [ $(echo "$VERSION_ID >= 24.04" | bc) != 1 ]; then
-  echo "$(tput setaf 1)Error: OS requirement not met"
+# Check if running on Ubuntu 24.04+ or Pop OS 24.04+
+if [ "$ID" != "ubuntu" ] && [ "$ID" != "pop" ]; then
+  echo "$(tput setaf 1)Error: Unsupported OS"
   echo "You are currently running: $ID $VERSION_ID"
-  echo "OS required: Ubuntu 24.04 or higher"
+  echo "Supported OS: Ubuntu 24.04+ or Pop OS 24.04+"
+  echo "Installation stopped."
+  exit 1
+fi
+
+if [ $(echo "$VERSION_ID >= 24.04" | bc) != 1 ]; then
+  echo "$(tput setaf 1)Error: OS version too old"
+  echo "You are currently running: $ID $VERSION_ID"
+  echo "Required version: 24.04 or higher"
   echo "Installation stopped."
   exit 1
 fi
