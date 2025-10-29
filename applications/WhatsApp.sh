@@ -5,7 +5,7 @@ cat <<EOF >~/.local/share/applications/WhatsApp.desktop
 Version=1.0
 Name=WhatsApp
 Comment=WhatsApp Messenger
-Exec=google-chrome --app="https://web.whatsapp.com" --name=WhatsApp --class=Whatsapp
+Exec=firefox --new-window --name=WhatsApp --class=Whatsapp "https://web.whatsapp.com"
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/omakub/applications/icons/WhatsApp.png

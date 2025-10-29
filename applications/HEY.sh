@@ -5,7 +5,7 @@ cat <<EOF >~/.local/share/applications/HEY.desktop
 Version=1.0
 Name=HEY
 Comment=HEY Email + Calendar
-Exec=google-chrome --app="https://app.hey.com/" --name=HEY --class=HEY
+Exec=firefox --new-window --name=HEY --class=HEY "https://app.hey.com/"
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/omakub/applications/icons/HEY.png
